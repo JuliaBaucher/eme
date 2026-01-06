@@ -1,0 +1,167 @@
+/**
+ * EME Monaco - Design Tokens
+ * Extended Monaco Entreprises Visual Identity System
+ * 
+ * Usage: Import this file as the foundation for all stylesheets
+ */
+
+:root {
+  /* ===== COLOR PALETTE ===== */
+  
+  /* Monaco Official Colors */
+  --monaco-red: #CE1126;
+  --monaco-red-rgb: 206, 17, 38;
+  --monaco-white: #FFFFFF;
+  --monaco-white-rgb: 255, 255, 255;
+  
+  /* Government Digital Service Colors */
+  --primary-blue: #003366;
+  --primary-blue-rgb: 0, 51, 102;
+  --secondary-blue: #0066CC;
+  --secondary-blue-rgb: 0, 102, 204;
+  
+  /* Status Colors */
+  --success-green: #28A745;
+  --success-green-rgb: 40, 167, 69;
+  --warning-orange: #FFC107;
+  --warning-orange-rgb: 255, 193, 7;
+  --error-red: #DC3545;
+  --error-red-rgb: 220, 53, 69;
+  --info-blue: #17A2B8;
+  --info-blue-rgb: 23, 162, 184;
+  
+  /* Neutral Grays */
+  --gray-900: #212529;
+  --gray-800: #343A40;
+  --gray-700: #495057;
+  --gray-600: #6C757D;
+  --gray-500: #ADB5BD;
+  --gray-400: #CED4DA;
+  --gray-300: #DEE2E6;
+  --gray-200: #E9ECEF;
+  --gray-100: #F8F9FA;
+  
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Families */
+  --font-primary: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-secondary: 'Roboto', 'Source Sans Pro', sans-serif;
+  --font-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* ===== SPACING ===== */
+  
+  /* Base Spacing Scale (8px base) */
+  --space-0: 0;
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  
+  /* Layout Spacing */
+  --container-padding: var(--space-4);
+  --container-max-width: 1200px;
+  --section-padding-y: var(--space-16);
+  --section-padding-x: var(--space-4);
+  --component-gap: var(--space-6);
+  --element-gap: var(--space-4);
+  
+  /* ===== VISUAL EFFECTS ===== */
+  
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;   /* 2px */
+  --radius-md: 0.375rem;   /* 6px */
+  --radius-lg: 0.5rem;     /* 8px */
+  --radius-xl: 0.75rem;    /* 12px */
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Icon Sizes */
+  --icon-xs: 1rem;       /* 16px */
+  --icon-sm: 1.25rem;    /* 20px */
+  --icon-md: 1.5rem;     /* 24px */
+  --icon-lg: 2rem;       /* 32px */
+  --icon-xl: 2.5rem;     /* 40px */
+  
+  /* ===== BREAKPOINTS ===== */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --monaco-white: #1a1a1a;
+    --gray-100: #2d2d2d;
+    --gray-200: #404040;
+    --gray-300: #525252;
+    --gray-400: #737373;
+    --gray-500: #a3a3a3;
+    --gray-600: #d4d4d4;
+    --gray-700: #e5e5e5;
+    --gray-800: #f5f5f5;
+    --gray-900: #ffffff;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-blue: #000066;
+    --secondary-blue: #0000CC;
+    --gray-700: #000000;
+    --gray-600: #333333;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0s;
+    --transition-normal: 0s;
+    --transition-slow: 0s;
+  }
+}

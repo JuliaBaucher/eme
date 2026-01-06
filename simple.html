@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EME Assistant - Simple Version</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .header {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .chat-area {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 400px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #0066CC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #003366;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .user {
+            background: #0066CC;
+            color: white;
+            text-align: right;
+        }
+        .assistant {
+            background: #f0f0f0;
+            border-left: 4px solid #CE1126;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>EME — Assistant</h1>
+        <p>Assistant officiel du programme Extended Monaco Entreprises</p>
+    </div>
+
+    <div class="chat-area" id="chatArea">
+        <div class="message assistant">
+            Bonjour ! Je suis l'assistant EME. Comment puis-je vous aider ?
+        </div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="messageInput" placeholder="Tapez votre message...">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+
+    <script>
+        console.log('Simple EME Chatbot loaded');
+        
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const chatArea = document.getElementById('chatArea');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'message user';
+            userDiv.textContent = message;
+            chatArea.appendChild(userDiv);
+            
+            // Clear input
+            input.value = '';
+            
+            // Simulate assistant response
+            setTimeout(() => {
+                const assistantDiv = document.createElement('div');
+                assistantDiv.className = 'message assistant';
+                assistantDiv.textContent = 'Merci pour votre message. Je suis une version de test de l\'assistant EME.';
+                chatArea.appendChild(assistantDiv);
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }, 1000);
+            
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+        
+        // Allow Enter key to send message
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

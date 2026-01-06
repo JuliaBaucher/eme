@@ -1,0 +1,101 @@
+Role: Act as a Senior Frontend Engineer and AI UX Specialist having full information about Extended Monaco Entreprises (EME) – The Prince’s Government initiative for digital transformation.
+
+Create specifications for the application : webpage for a chatbot responding to the quesitons about EME program.
+
+The specification shoudl include
+
+-Goal of the application
+
+-Visual identify (already defined in this project 
+
+-functional requirments for a chatbot webpage
+
+-trust, trust disclaimer for AI application, compliancy, ethic
+
+
+
+*GOAL
+
+Create a high-end, single-page chatbot interface that serves as a concierge for Monégasque companies. It must answer questions about maturity diagnostics, the professional directory, funding, and the 2026 AI integration roadmap (FlashLearn IA).
+
+
+
+*VISUAL IDENTITY
+
+Visual identity specification already done as part of this project 
+
+
+
+*FUNCTIONAL REQUIREMENTS FOR THE CHATBOT WEBPAGE 
+
+1. Robust Input Validation (Guardrails)
+
+Empty State Prevention: The "Send" action (button click or Enter key) must be disabled if the input is empty or contains only whitespace.
+
+Character Budgeting: * Hard limit the input (e.g., 4000 characters).
+
+Provide a visual counter that changes color (e.g., turns red) as the user approaches the limit.
+
+Sanitization: All user and system messages must be treated as plain text or passed through a sanitization library before rendering to prevent Cross-Site Scripting (XSS) attacks.
+
+2. State & Persistence Management
+
+Session Continuity: Use localStorage to save the chat array. On page reload, the frontend should check for existing data and re-render the conversation history.
+
+Manual Reset: A "Clear Chat" feature must exist to allow users to wipe their local history and reset the UI state.
+
+Message Attribution: Each message object in the frontend state should include a unique ID, a timestamp, and a "role" (user, assistant, or system/error).
+
+3. Interaction Design (UX)
+
+Auto-Scroll: The chat container must automatically scroll to the bottom whenever a new message (user or assistant) is added.
+
+Optimistic UI / Loading States: * Immediately display the user's message in the chat upon sending.
+
+Display a "Typing" or "Thinking" indicator while the API request is pending.
+
+Keyboard Ergonomics: * Enter to send.
+
+Shift + Enter to create a new line (essential for long-form questions).
+
+Automatically refocus the input field after a message is sent or the chat is cleared.
+
+4. Resilient Error Handling
+
+The frontend must gracefully handle failures independent of the backend's specific logic:
+
+Network Timeouts: If the fetch request takes longer than a defined threshold (e.g., 30 seconds), show a "Request Timed Out" message.
+
+Friendly Error Bubbles: Instead of a generic browser alert, render error messages as special "system" chat bubbles.
+
+Input Retention: If a message fails to send, the user's original text should remain in the input box (or provide a "Retry" button) so they don't have to re-type it.
+
+5. Accessibility (A11y)
+
+Accessible Rich Internet Applications (ARIA): * Use aria-live="polite" on the message container so screen readers announce new replies.
+
+Ensure all buttons have descriptive aria-label attributes.
+
+Visual Contrast: Maintain a contrast ratio of at least 4.5:1 for text against backgrounds to support users with visual impairments.
+
+Focus Management: Ensure a visible focus ring exists for keyboard-only users navigating the interface.
+
+6. Responsive & Adaptive UI
+
+Fluid Layout: The chat window should adapt to mobile, tablet, and desktop widths without losing functionality.
+
+Flexible Textarea: The input box should grow vertically (up to a maximum height) as the user types multiple lines, rather than forcing a scrollbar inside a tiny box.
+
+7. Optional "Quality of Life" Features
+
+Markdown Support: Render the assistant's response using a Markdown parser to support bolding, bullet points, and code blocks for technical CV details.
+
+Copy to Clipboard: Add a "Copy" button to assistant responses, making it easy for users to save specific information.
+
+Dark/Light Mode: A toggle to switch themes based on user preference or system settings.
+
+
+
+*TRUST
+
+To establish trust on the EME Monaco chatbot page, you must combine official government branding and HTTPS security with transparent AI disclosure disclaimers, clear data privacy guardrails (like a "Clear Chat" button), and a visible "human fallback" link to official administrative channels.
